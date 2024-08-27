@@ -3,9 +3,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const submitBtn = document.getElementById('submit-btn');
     const selectedStickersLabel = document.getElementById('selected-stickers-label');
 
-// Categories and their corresponding image counts
-const stickerCategories = {
-      'basketball': 6,
+    // Categories and their corresponding image counts
+    const stickerCategories = {
+        'basketball': 6,
         'one-piece': 20, // Use lowercase and hyphenated format
         'meme': 20,
         "arcane":2,
@@ -87,8 +87,8 @@ const stickerCategories = {
         "wednesday":1,
         "zatla":3,
 
-    // Add other categories and the number of images for each
-};
+        // Add other categories and the number of images for each
+    };
 
     Object.keys(stickerCategories).forEach(category => {
         const imageCount = stickerCategories[category];
@@ -96,7 +96,7 @@ const stickerCategories = {
             const img = document.createElement('img');
             img.src = `${category}/${category} (${i}).JPG`;  // Load image based on folder and name
             img.alt = `${category} Sticker ${i}`;
-            img.classList.add('sticker'); // Add class to image 
+            img.classList.add('sticker'); // Add class to image
 
             const checkbox = document.createElement('input');
             checkbox.type = 'checkbox';
@@ -115,8 +115,9 @@ const stickerCategories = {
             thumbnailsContainer.appendChild(stickerDiv);
         }
     });
+});
 
-    // Add event listener to submit button
+ // Add event listener to submit button
     submitBtn.addEventListener('click', function() {
         const selectedStickers = [];
         const checkboxes = document.querySelectorAll('.thumbnails input[type="checkbox"]:checked');
@@ -134,6 +135,7 @@ const stickerCategories = {
         }
     });
 });
+
 
 // Filter stickers based on category
 function filterStickers() {
@@ -156,11 +158,11 @@ function filterStickers() {
 function unselectAllStickers() {
     const checkboxes = document.querySelectorAll('.thumbnails input[type="checkbox"]');
     checkboxes.forEach(checkbox => checkbox.checked = false);
+}
 
     // Clear the label
     const selectedStickersLabel = document.getElementById('selected-stickers-label');
     selectedStickersLabel.textContent = ''; // Clear the label text
-}
 
 document.addEventListener("scroll", function() {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
