@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticker Shop</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="vanta-test" style="width: 100%; height: 500px;"></div>
+    
+    <header>
+        <div class="header-container">
+            <h1>Welcome to Our Sticker Shop</h1>
+            <nav>
+                <ul>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section id="gallery" class="gallery">
+        <h2>Sticker Gallery</h2>
+        
+        <!-- Category Filter Dropdown -->
+        <div class="filter-container">
+            <label for="categorySelect">Choose a category:</label>
+            <select id="categorySelect" onchange="filterStickers()">
+                <option value="all">All</option>
+                <option value="basketball">Basketball</option>
+                <option value="one-piece">One Piece</option>
+                <option value="meme">Meme</option>
+                <option value="arcane">Arcane</option>
+                <option value="architecture">Architecture</option>
+                <option value="art">Art</option>
+                <option value="attackOnTitins">Attack on Titins</option>
+                <option value="avatar">Avatar</option>
+                <option value="avenger">Avenger</option>
+                <option value="batman">Batman</option>
+                <option value="berserk">Berserk</option>
+                <option value="blackClover">Black Clover</option>
+                <option value="bleatch">Bleatch</option>
+                <option value="box">Box</option>
+                <option value="breakingBad">Breaking Bad</option>
+                <option value="classroomOfElits">Classroom of Elits</option>
+                <option value="dark">Dark</option>
+                <option value="deadpool">Deadpool</option>
+                <option value="deathnote">Death Note</option>
+                <option value="demonSlayer">Demon Slayer</option>
+                <option value="dragonBall">Dragon Ball</option>
+                <option value="fightClub">Fight Club</option>
+                <option value="animefilms">Anime Films</option>
+                <option value="football">Football</option>
+                <option value="forestGump">Forest Gump</option>
+                <option value="freinds">Friends</option>
+                <option value="games">Games</option>
+                <option value="godFather">God Father</option>
+                <option value="gta">GTA</option>
+                <option value="gumbull">Gumbull</option>
+                <option value="harryPotter">Harry Potter</option>
+                <option value="howIMetYourMother">How I Met Your Mother</option>
+                <option value="howToTrainYourDragon">How to Train Your Dragon</option>
+                <option value="hxh">Hunter x Hunter</option>
+                <option value="info">Informatique</option>
+                <option value="intersteller">Intersteller</option>
+                <option value="invincible">Invincible</option>
+                <option value="jjk">Jujutsu Kaisen</option>
+                <option value="jojo">Jojo</option>
+                <option value="joker">Joker</option>
+                <option value="klem">Klem</option>
+                <option value="kongfuPanda">Kung Fu Panda</option>
+                <option value="lacasadelpaper">La Casa del Paper</option>
+                <option value="lalaland">La La Land</option>
+                <option value="love">Love</option>
+                <option value="loveIsWar">Love Is War</option>
+                <option value="matrix">Matrix</option>
+                <option value="miyamora">Miyamora</option>
+                <option value="monsters">Monsters</option>
+                <option value="moonNight">Moon Night</option>
+                <option value="mrRobot">Mr. Robot</option>
+                <option value="mushukutensai">Mushoku Tensai</option>
+                <option value="myHeroAcademy">My Hero Academy</option>
+                <option value="naruto">Naruto</option>
+                <option value="nimo">Nimo</option>
+                <option value="nurse">Nurse</option>
+                <option value="oiretsOfKaribian">Oirets Of Karibian</option>
+                <option value="onePenchman">One Punch Man</option>
+                <option value="openhaimer">Oppenheimer</option>
+                <option value="palastine">Palastine</option>
+                <option value="peakyBlinders">Peaky Blinders</option>
+                <option value="prisonBreak">Prison Break</option>
+                <option value="rapanzul">Rapanzul</option>
+                <option value="ratatoille">Ratatouille</option>
+                <option value="rickAndMorty">Rick and Morty</option>
+                <option value="science">Science</option>
+                <option value="sialentVoice">Silent Voice</option>
+                <option value="simson">Simson</option>
+                <option value="soloLeveling">Solo Leveling</option>
+                <option value="songsAndSingers">Songs and Singers</option>
+                <option value="spacetoon">Spacetoon</option>
+                <option value="spiderman">Spiderman</option>
+                <option value="spongbob">Spongebob</option>
+                <option value="strangerThings">Stranger Things</option>
+                <option value="the100">The 100</option>
+                <option value="topGun">Top Gun</option>
+                <option value="toyStory">Toy Story</option>
+                <option value="villandSaga">Villand Saga</option>
+                <option value="wednesday">Wednesday</option>
+                <option value="zatla">Zatla</option>
+            </select>
+        </div>
+
+        <form id="selectionForm">
+            <div class="thumbnails"></div>
+            <!-- Submit and Unselect buttons -->
+            <div class="button-container">
+                <button type="button" id="submit-btn" class="submit-btn">Submit Selection</button>
+                <button type="button" class="unselect-btn" onclick="unselectAllStickers()">Unselect Stickers</button>
+            </div>
+            <div id="selected-stickers-label">No stickers selected</div>
+        </form>
+    </section>
+
+    <!-- Google Form Embed -->
+    <div class="form-container">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdTy42ePEOVX7IVLuNVUKg6vVfu2BCTTe1AO-naYQQc5DcdPw/viewform?embedded=true" width="640" height="959" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us!</p>
+            <p>Phone: <a href="tel:+53204620">53204620</a></p>
+            <p>Instagram: <a href="https://www.instagram.com/planet_stickers_x?igsh=bjBxamNqd2NjenAx&utm_source=qr" target="_blank">@planet_stickers</a></p>
+        </div>
+    </section>
+    
+    <!-- Scroll to Top Arrow -->
+    <div class="scroll-to-top" id="scrollToTopBtn">&uarr;</div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2024 Sticker Shop. All rights reserved.</p>
+            <p>Made with ❤️ by Aziz</p>
+            <p>Follow us on Instagram: <a href="https://www.instagram.com/planet_stickers_x?igsh=bjBxamNqd2NjenAx&utm_source=qr" target="_blank">@planet_stickers</a></p>
+        </div>
+    </footer>
+
+    <div class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" src="" alt="">
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://unpkg.com/vanta/dist/vanta.net.min.js"></script>
+    <script>
+      VANTA.NET({
+        el: "#vanta-test",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00,
+        color: 0x2c00ff,
+        backgroundColor: 0x0
+      });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
